@@ -48,7 +48,7 @@
 
     SelectParser.prototype.add_option = function(option, group_position, group_disabled) {
       if (option.nodeName.toUpperCase() === "OPTION") {
-        if (option.text !== "") {
+        if (option.text !== "" && option.getAttribute("data-hidden") !== "true") {
           if (group_position != null) {
             this.parsed[group_position].children += 1;
           }
